@@ -20,7 +20,6 @@ KGS5=plone.restapi==8.43.3 plone.volto==4.1.0 plone.rest==3.0.1
 TESTING_ADDONS=plone.app.robotframework==2.0.0 plone.app.testing==7.0.0
 
 # Project settings
-
 DIR=$(shell basename $$(pwd))
 
 # Recipe snippets for reuse
@@ -31,7 +30,6 @@ RED=`tput setaf 1`
 GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
-
 
 # Top-level targets
 .PHONY: all
@@ -93,7 +91,7 @@ test-acceptance-headless: ## Start Core Cypress Acceptance Tests in headless mod
 full-test-acceptance: ## Runs Core Full Acceptance Testing in headless mode
 	$(NODEBIN)/start-test "make start-test-acceptance-server" http-get://127.0.0.1:55001/plone "make start-test-acceptance-frontend" http://127.0.0.1:3000 "make test-acceptance-headless"
 
-.PHONY: test-acceptance
+.PHONY: test-acceptance-addon
 test-acceptance-addon: ## Start Core Cypress Acceptance Tests for an addon
 	$(NODEBIN)/cypress open -P $(ADDONPATH)
 
@@ -104,3 +102,17 @@ test-acceptance-addon-headless: ## Start Core Cypress Acceptance Tests for an ad
 .PHONY: full-test-acceptance-addon
 full-test-acceptance-addon: ## Runs Core Full Acceptance Testing for an addon in headless mode
 	$(NODEBIN)/start-test "make start-test-acceptance-server" http-get://127.0.0.1:55001/plone "make start-test-acceptance-frontend" http://127.0.0.1:3000 "make test-acceptance-addon-headless"
+
+# New target: release
+.PHONY: release
+release: ## Releases the add-on to npm
+	@echo "$(GREEN)==> Releasing the add-on to npm$(RESET)"
+	# Ensure the working directory is clean
+	@if [ -n "$$(git status --porcelain)" ]; then \
+	  echo "Working directory is not clean. Please commit your changes first."; \
+	  exit 1; \
+	fi
+	# Bump the version (patch bump by default; change to 'minor' or 'major' as needed)
+	npm version patch
+	# Publish the package to npm
+	npm publish
