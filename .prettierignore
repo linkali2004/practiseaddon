@@ -1,4 +1,0 @@
-src/**/CHANGELOG.md
-src/**/README.md
-!src/addons/volto-newproject
-!src/addons/testingaddon
