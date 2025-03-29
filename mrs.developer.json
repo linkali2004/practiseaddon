@@ -1,0 +1,8 @@
+{
+  "volto-newproject": {
+    "local": "addons/volto-newproject/src"
+  },
+  "testingaddon": {
+    "local": "addons/testingaddon/src"
+  }
+}

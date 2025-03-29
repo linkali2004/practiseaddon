@@ -1,0 +1,161 @@
+ui.basic.segment.header-wrapper {
+  position: relative;
+  border-bottom: 1px solid @lightGrey;
+
+  &.ui.segment {
+    padding-top: 0em;
+    padding-bottom: 0em;
+  }
+
+  .header {
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    .search {
+      border-left: 1px solid @lightGrey;
+    }
+    .search-button {
+      border: none;
+      background: none;
+      color: #005b85;
+      cursor: pointer;
+    }
+
+    .try-now-link {
+      color: @blue;
+      margin-right: 1em;
+    }
+    .ui.secondary.pointing.menu .item {
+      font-family: 'Helvetica Neue';
+      text-transform: none;
+      color: @black;
+      &.active {
+        border-color: @blue;
+      }
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.block.slider .image-gallery-content .image-gallery-slide .image-gallery-image {
+    max-height: none;
+  }
+
+
+  
+.block.release {
+  background: #f0f8fc;
+  padding: 20px 0;
+  h2 {
+    font-weight: bold;
+  }
+  .text-button-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      width: 600px;
+      font-size: 1.25rem;
+      color: #595959;
+      font-weight: 300;
+    }
+
+    a {
+      border-radius: 0;
+      color: @white;
+      background: @blue;
+      border: 2px solid @blue;
+      font-weight: normal;
+      padding: 14px 20px 16px 22px;
+      display: inline-block;
+      line-height: 1em;
+      height: 56px;
+      margin-right: 150px;
+      &::after {
+        background-image: url(https://plone.org/static/media/arrow-right-white.141ecd63.svg);
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-left: 1.5em;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        vertical-align: text-top;
+      }
+
+      &:hover {
+        background: @white;
+        color: @blue;
+
+        &::after {
+          background-image: url(https://plone.org/static/media/arrow-right.c1b96a21.svg);
+        }
+      }
+    }
+  }
+}
+
+
+.block.listing.listingGrid {
+  font-family: 'Helvetica';
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .listing-grid {
+    .ui.card {
+      width: 100%;
+
+      img {
+        height: 260px;
+        object-fit: cover;
+        object-position: center center;
+      }
+      .content {
+        .news-card-subtitle {
+          color: @blue;
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+        h3 {
+          color: @blue;
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin-top: 0;
+          padding-right: 1rem;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .date {
+          margin-bottom: 2rem;
+        }
+        .news-card-button {
+          font-family: 'Helvetica';
+          border: 1px solid @blue;
+          color: @blue;
+          padding: 4px 20px;
+          border-radius: 5px;
+          font-size: 13px;
+          line-height: 15px;
+          display: inline-flex;
+          align-items: center;
+
+          .icon {
+            margin-left: 1.5em;
+          }
+          &:hover {
+            color: @white;
+            background: @blue;
+          }
+        }
+      }
+    }
+  }
+}
