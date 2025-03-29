@@ -30,6 +30,11 @@
     "volto-newproject",
     "testingaddon"
   ],
+
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/linkali2004/practiseaddon.git"
+},
   "jest": {
     "modulePathIgnorePatterns": [
       "api"
