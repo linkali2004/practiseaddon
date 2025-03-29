@@ -2,7 +2,7 @@
   "name": "testingaddonnewproject",
   "description": "A Volto-powered Plone frontend",
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "start": "razzle start",
     "postinstall": "make omelette && make patches",
@@ -30,11 +30,10 @@
     "volto-newproject",
     "testingaddon"
   ],
-
   "repository": {
-  "type": "git",
-  "url": "git+https://github.com/linkali2004/practiseaddon.git"
-},
+    "type": "git",
+    "url": "git+https://github.com/linkali2004/practiseaddon.git"
+  },
   "jest": {
     "modulePathIgnorePatterns": [
       "api"
