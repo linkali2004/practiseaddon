@@ -2,7 +2,7 @@
   "name": "@shreydwivedi/justanotherpackage",
   "description": "A Volto-powered Plone frontend",
   "license": "MIT",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "scripts": {
     "start": "razzle start",
     "postinstall": "make omelette && make patches",
